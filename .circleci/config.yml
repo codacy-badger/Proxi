@@ -46,9 +46,9 @@ jobs:
 
       # run tests!
       - run: gradle test
-      
+
       - run: ./gradlew codeCoverageReport
 
       - run:
           command: |
-            bash <(curl -sSfL https://codecov.io/bash)  || echo 'Codecov failed to upload'      
+            bash <(curl -sSfL https://codecov.io/bash) -t $CODECOV_TOKEN || echo 'Codecov failed to upload'      
