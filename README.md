@@ -7,7 +7,7 @@
 
 <div align="center">
 
-[![CircleCI](https://circleci.com/gh/ProxideFi/Proxi/tree/master.svg?style=svg&circle-token=2380b5f0e372382eab05df88d28d6010f753d57b)](https://circleci.com/gh/ProxideFi/Proxi/tree/master) [![CodeFactor](https://www.codefactor.io/repository/github/proxidefi/proxi/badge?s=f6e0b64dda2179dca33e1de3ed6b813ee5618257)](https://www.codefactor.io/repository/github/proxidefi/proxi) [![Kotlin 1.3.31](https://img.shields.io/badge/Kotlin-1.3.31-blue.svg?style=flat&logo=kotlin)](http://kotlinlang.org)   [![GitHub](https://img.shields.io/github/license/ProxideFi/Proxi.svg)](https://github.com/ProxideFi/Proxi/blob/master/README.md)
+[![CircleCI](https://circleci.com/gh/ProxideFi/Proxi/tree/master.svg?style=svg&circle-token=2380b5f0e372382eab05df88d28d6010f753d57b)](https://circleci.com/gh/ProxideFi/Proxi/tree/master) [![CodeFactor](https://www.codefactor.io/repository/github/proxidefi/proxi/badge?s=f6e0b64dda2179dca33e1de3ed6b813ee5618257)](https://www.codefactor.io/repository/github/proxidefi/proxi) [![Kotlin 1.3.31](https://img.shields.io/badge/Kotlin-1.3.31-blue.svg?style=flat&logo=kotlin)](http://kotlinlang.org)   
 
 
 </div>
