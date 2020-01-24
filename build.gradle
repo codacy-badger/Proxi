@@ -55,6 +55,7 @@ allprojects {
     apply plugin: 'org.jetbrains.dokka'
     apply plugin: 'net.corda.plugins.cordapp'
     apply plugin: 'net.corda.plugins.cordformation'
+    apply plugin: 'jacoco'
     //apply plugin: 'net.corda.plugins.quasar-utils'
 
     sourceCompatibility = '1.8'
@@ -179,4 +180,26 @@ task deployNodes(type: net.corda.plugins.Cordform, dependsOn: ['jar']) {
         }
         //rpcUsers = [[ user: "user1", "password": "test", "permissions": ["ALL"]]]
     }
+}
+
+
+task codeCoverageReport(type: JacocoReport) {
+    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+
+    subprojects.each {
+        sourceSets it.sourceSets.main
+    }
+
+    reports {
+        xml.enabled true
+        xml{ 
+            destination file("${buildDir}/reports/jacoco/report.xml")
+        }
+        html.enabled false
+        csv.enabled false
+    }
+}
+
+codeCoverageReport.dependsOn {
+    subprojects*.test
 }
