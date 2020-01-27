@@ -45,9 +45,17 @@ plugins {
 }
 
 dokka {
-    outputFormat = 'html'
-    //sourceDirs = files('contracts/src/main')
-    outputDirectory = "$buildDir/javadoc"
+    outputFormat = 'html'   
+    outputDirectory = "$buildDir/../docs"
+
+    subProjects = ["clients", "workflows", "contracts"]
+    configuration {
+        // This is a list of platform names that will be shown in the final result. See the "Platforms" section of this readme
+        targets = ["JVM"]  
+
+        // Platform used for code analysis. See the "Platforms" section of this readme
+        platform = "JVM"  
+    }
 }
 
 allprojects {
