@@ -41,7 +41,7 @@ class AssetContract : Contract {
 
     private fun verifyIssue(tx: LedgerTransaction, signers: Set<PublicKey>) = requireThat {
         val output = tx.outputsOfType<AssetState>().single()
-        "No inputs should be consumed when issuing an AssetContract." using (tx.inputStates.isEmpty())
+        "No inputs should be consumed when issuing an AssetContract." using tx.inputStates.isEmpty()
 //        "All of the participants must be signers." using (signers.containsAll(output.participants.map { it.owningKey }))
         "Amount must be non-negative." using (output.amount> 0)
     }
@@ -49,7 +49,7 @@ class AssetContract : Contract {
     private fun verifyTransfer(tx: LedgerTransaction, signers: Set<PublicKey>) = requireThat {
         val inputs  = tx.inputsOfType<AssetState>()
         val outputs = tx.outputsOfType<AssetState>()
-        "1 or more inputs should be consumed when issuing an AssetContract." using (inputs.isNotEmpty())
+        "1 or more inputs should be consumed when issuing an AssetContract." using inputs.isNotEmpty()
         outputs.forEach {
             "Amount must be non-negative." using (it.amount > 0)
         }
