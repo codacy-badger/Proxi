@@ -31,7 +31,7 @@ Built using the [corda](https://github.com/corda/corda).
 
 ## License
 
-Copyright © Debrief. All rights reserved.
+Copyright © Debrief 2020. All rights reserved.
 
 Licensed under the [Apache v2 License](LICENSE).
 
