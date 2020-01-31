@@ -1,6 +1,6 @@
 <p align="center">
   <!--<img src="./defi-logo.svg" width="300">-->
-  <h1 align="center">Debrief</h1>
+  <h1 align="center">Proxi</h1>
   <h2 align="center">LedgerService</h2>
 </p>
 <h3 align="center">DeFi for Crypto.</h3>
@@ -31,7 +31,7 @@ Built using the [corda](https://github.com/corda/corda).
 
 ## License
 
-Copyright © Debrief 2020. All rights reserved.
+Copyright © Proxi 2020. All rights reserved.
 
 Licensed under the [Apache v2 License](LICENSE).
 
