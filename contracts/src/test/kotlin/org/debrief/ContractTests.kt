@@ -11,9 +11,4 @@ import org.junit.Test
 class ContractTests {
     private val ledgerServices = MockServices()
 
-    /**
-    Dummy test function
-     */
-    @Test
-    fun `dummy test`() { }
 }
