@@ -11,6 +11,12 @@ import net.corda.core.node.services.vault.PageSpecification
 import net.corda.core.node.services.vault.QueryCriteria
 import org.debrief.contracts.AssetState
 
+/**
+ * Gets the unconsumed states of currency for the account
+ *
+ * @param accountId The UUID of account.
+ * @param symbol The currency Symbol.
+*/
 @StartableByRPC
 class QueryAssetFlow(
         private val accountId: String? = null,

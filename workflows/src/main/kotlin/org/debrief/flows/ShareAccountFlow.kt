@@ -5,6 +5,10 @@ import net.corda.core.flows.FlowLogic
 import net.corda.core.flows.StartableByRPC
 import net.corda.core.identity.Party
 
+/**
+ * ShareAccountFlow class
+ *
+ */
 @StartableByRPC
 class ShareAccountFlow(
         private val accountUUID: String,

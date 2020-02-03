@@ -11,11 +11,20 @@ import org.junit.Test
 import java.util.concurrent.Future
 import kotlin.test.assertEquals
 
+/**
+ * DriverBasedTest  
+ *
+ */
 class DriverBasedTest {
     private val bankA = TestIdentity(CordaX500Name("BankA", "", "GB"))
     private val bankB = TestIdentity(CordaX500Name("BankB", "", "US"))
     private val bankC = TestIdentity(CordaX500Name("BankC", "", "CA"))
 
+    /**
+     *
+     * From each node, make an RPC call to retrieve another node's name from the network map, to verify that the
+     * nodes have started and can communicate.
+     */
     @Test
     fun `node test`() = withDriver {
         // Start a pair of nodes and wait for them both to be ready.

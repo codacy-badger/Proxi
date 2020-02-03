@@ -11,8 +11,16 @@ import org.debrief.contracts.AssetContract
 import org.debrief.contracts.AssetState
 import java.util.*
 
+/**
+ * IssueAssetFlow
+ *
+ */
 object IssueAssetFlow {
 
+    /**
+    * Initiator Class for IssueAssetFlow
+    *
+    */
     @StartableByRPC
     class Initiator(
             private val amount: Int,
@@ -29,6 +37,9 @@ object IssueAssetFlow {
                 override fun childProgressTracker() = FinalityFlow.tracker()
             }
 
+            /**
+             *
+             */
             fun tracker() = ProgressTracker(
                     GENERATING_TRANSACTION,
 //                    VERIFYING_TRANSACTION,

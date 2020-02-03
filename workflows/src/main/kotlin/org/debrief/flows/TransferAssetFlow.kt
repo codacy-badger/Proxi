@@ -16,7 +16,21 @@ import org.debrief.contracts.AssetContract
 import org.debrief.contracts.AssetState
 import java.util.*
 
+
+/**
+ * TransferAssetFlow
+ *
+ */
 object TransferAssetFlow {
+
+    /**
+    * TransferAssetFlow
+    * 
+    * @param amount The value of amount
+    * @param symbol The symbol of the currency
+    * @param senderId The senderID 
+    * @param recipientId The recipientId
+    */
     @StartableByRPC
     @StartableByService
     @InitiatingFlow
@@ -38,6 +52,11 @@ object TransferAssetFlow {
                 override fun childProgressTracker() = FinalityFlow.tracker()
             }
 
+            /**
+             *
+             *
+             *
+            */
             fun tracker() = ProgressTracker(
                     GENERATING_TRANSACTION,
                     VERIFYING_TRANSACTION,
@@ -95,6 +114,12 @@ object TransferAssetFlow {
         }
     }
 
+
+    /**
+     * Acceptor class 
+     * Verifies the transaction for validity
+     *
+    */
     @InitiatedBy(Initiator::class)
     class Acceptor(val otherSession: FlowSession) : FlowLogic<SignedTransaction>() {
         @Suspendable

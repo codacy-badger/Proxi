@@ -18,12 +18,20 @@ import org.junit.Before
 import org.junit.Test
 import kotlin.test.assertFailsWith
 
+/**
+ * FlowTests class 
+ *
+ */
 class FlowTests {
     private lateinit var network: MockNetwork
     private lateinit var a: StartedMockNode
     private lateinit var b: StartedMockNode
     private lateinit var c: StartedMockNode
 
+    /**
+    * Initialize FlowTests 
+    *
+    */
     @Before
     fun setup() {
         network = MockNetwork(MockNetworkParameters(cordappsForAllNodes = listOf(
@@ -44,6 +52,10 @@ class FlowTests {
         network.startNodes()
     }
 
+    /**
+    * Stop Nodes 
+    *
+    */
     @After
     fun tearDown() {
         network.stopNodes()
@@ -97,7 +109,10 @@ class FlowTests {
         Assert.assertEquals(70, balance)
     }
 
-    //fix paging for >200
+    /**
+    * Get morethan 200 Accounts 
+    * fix paging for >200
+    */    
     @Test
     fun `can get 200 accounts, which larger than default page size`() {
         val accountId = "test_"
@@ -111,6 +126,9 @@ class FlowTests {
         Assert.assertEquals(200, result.size)
     }
 
+    /**
+    * Get 200 Accounts by default
+    */
     @Test
     fun `can get 200 STOs`() {
         val tokenName = "sto"
