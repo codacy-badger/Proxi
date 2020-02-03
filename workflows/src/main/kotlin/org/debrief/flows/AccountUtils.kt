@@ -5,6 +5,12 @@ import net.corda.accounts.states.AccountInfo
 import net.corda.core.contracts.StateAndRef
 import net.corda.core.node.ServiceHub
 
+/**
+ * Account Utils
+ *
+ * Gets all Accounts and Account by UUID
+ *
+ */
 object AccountUtils {
     fun getMyAccounts(serviceHub: ServiceHub): List<StateAndRef<AccountInfo>> {
         val accountService = serviceHub.cordaService(KeyManagementBackedAccountService::class.java)

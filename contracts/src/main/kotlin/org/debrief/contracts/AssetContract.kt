@@ -7,6 +7,10 @@ import net.corda.core.transactions.LedgerTransaction
 import java.security.PublicKey
 import java.util.*
 
+/**
+ * AssetState Class
+ *
+ */
 @BelongsToContract(AssetContract::class)
 data class AssetState(
         val amount: Int,
@@ -18,14 +22,24 @@ data class AssetState(
         get() = listOfNotNull(ownerKey).map { AnonymousParty(it) }
 }
 
+/**
+ * AssetContract Class
+ *
+ */
 class AssetContract : Contract {
     companion object {
         @JvmStatic
         val ID = "org.debrief.contracts.AssetContract"
     }
-
+    
+    /**
+    * Commands interface for Issue and Transfer
+    *
+    */
     interface Commands : CommandData {
+        /** Issue Class */
         class Issue : Commands
+        /** Transfer Class */
         class Transfer : Commands
     }
 
